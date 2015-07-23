@@ -29,16 +29,16 @@ class ScoreKeeper
     return adjusted_game_length
   end
 
-
+  #this method returns a bowling score using a String and also checks the String for incorrect input
   def calculate(input)
-    #raises error if the game is not the correct length
-    raise ArgumentError, 'Input is invalid' if !compute_number_of_throws(input).between?(20,21) || (compute_number_of_throws(input) == 20 && input[input.size - 1] == "/")
+    #raises error if the game is not the correct length and if the last ball thrown is a "x" or "/" when the game isn't complete
+    raise ArgumentError, 'Input is invalid' if !compute_number_of_throws(input).between?(20,21) || (compute_number_of_throws(input) == 20 && (input[input.size - 1] == "x" || input[input.size - 1] == "/"))
 
     number_of_throws = 0
     score = 0
 
     (0..input.length-1).each do |throw|
-    input[throw].downcase #incase of an accidental X input
+    input[throw].downcase #incase of an accidental upper case "X" input
 
     if number_of_throws < 18 #after the 18th throw use special 10th frame scoring
 
