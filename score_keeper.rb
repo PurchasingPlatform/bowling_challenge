@@ -1,6 +1,6 @@
 class ScoreKeeper
 
-  #a method to make the code more readable and make the logic easier
+  #a method to make the code more readable and thus made the logic easier to reason.
   #it returns the appropriate number based on the position in input
   def convert_to_number(input,position)
     return 10 if input[position] == ("x") || input[position] == ("/")
@@ -10,7 +10,7 @@ class ScoreKeeper
 
   #finds the amount of frames taken up during a game of bowling
   #a game of bowling can only take 20 or 21 frames to complete
-  def compute_game_length(input)
+  def compute_number_of_throws(input)
     adjusted_game_length = 0
     (0..input.length-1).each do |char|
       if adjusted_game_length < 17
@@ -32,7 +32,7 @@ class ScoreKeeper
 
   def calculate(input)
     #raises error if the game is not the correct length
-    raise ArgumentError, 'Input is invalid' if !compute_game_length(input).between?(20,21) || (compute_game_length(input) == 20 && input[input.size - 1] == "/")
+    raise ArgumentError, 'Input is invalid' if !compute_number_of_throws(input).between?(20,21) || (compute_number_of_throws(input) == 20 && input[input.size - 1] == "/")
 
     number_of_throws = 0
     score = 0
