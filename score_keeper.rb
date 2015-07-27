@@ -16,7 +16,7 @@ class ScoreKeeper
     score = 0
 
     (0..input.length-1).each do |throw|
-    input[throw].downcase #incase of an accidental upper case "X" input
+    input[throw].downcase! #incase of an accidental upper case "X" input
 
     if @number_of_throws < 18 #after the 18th throw use special 10th frame scoring
 
