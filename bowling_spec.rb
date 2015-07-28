@@ -23,20 +23,20 @@ describe ScoreKeeper do
       end
     end
 
-    # context "when rolls are invalid" do
-    #   [
-    #     "9/3561368153258-718/",
-    #     "9-3/613/815/0/8-7/88",
-    #     "xx9"
-    #   ].each do |bowling_stats|
-    #
-    #     it "raises error for #{bowling_stats}" do
-    #       expect {
-    #         score_keeper.calculate(bowling_stats)
-    #       }.to raise_error
-    #     end
-    #
-    #   end
-    # end
+     context "when rolls are invalid" do
+       [
+         "9/3561368153258-718/",
+         "9-3/613/815/0/8-7/88",
+         "xx9"
+       ].each do |bowling_stats|
+
+         it "raises error for #{bowling_stats}" do
+           expect {
+             score_keeper.calculate(bowling_stats)
+           }.to raise_error
+         end
+
+       end
+     end
   end
 end
