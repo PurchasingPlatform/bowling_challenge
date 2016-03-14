@@ -27,7 +27,7 @@ Calculate the final score for a ten-pin bowling game by implementing the **Score
 
 - solution written in ruby
 - describe the complexity of the algorithm using Big O notation
-- additional tests for egde cases, i.e. "999" is not a valid run and the calculator should raise an exception
+- additional tests for edge cases, i.e. "999" is not a valid run and the calculator should raise an exception
 
 
 ### Running tests
